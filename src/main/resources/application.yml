@@ -1,0 +1,58 @@
+#app
+server:
+  port: 8080
+
+#spring
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/test?useUnicodeicode=true&characterEncoding=UTF8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+      username: root
+      password: hzp172594
+      initial-size: 1
+      max-active: 20
+      min-idle: 1
+      max-pool-prepared-statement-per-connection-size: 20
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      pool-prepared-statements: true
+      filters: stat
+      stat-view-servlet:
+        allow:
+        deny:
+        enabled: true
+        login-password: admin
+        login-username: admin
+        reset-enable: true
+        url-pattern: /druid/*
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      validation-query: SELECT 'x'
+      web-stat-filter:
+        enabled: true
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+        principal-cookie-name: admin
+        principal-session-name: admin
+        profile-enable: true
+        session-stat-enable: false
+        session-stat-max-count: 1000
+        url-pattern: /*
+      aop-patterns: com.hzp.demo.service.*
+
+  ########################################################
+  ### Java Persistence Api --  Spring jpa configuration.
+  ########################################################
+  # Specify the DBMS
+  jpa:
+    database: MYSQL
+    # Show or not log for each sql query
+    show-sql: true
+  # Hibernate ddl auto (create, create-drop, update, validate, none)
+  hibernate.ddl-auto: update
+  # Naming strategy
+  #[org.hibernate.cfg.ImprovedNamingStrategy  #org.hibernate.cfg.DefaultNamingStrategy]
+  hibernate.naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#指定默认存储引擎为innodb
+#spring.jpa.database-platform = org.hibernate.dialect.MySQL5InnoDBDialect
