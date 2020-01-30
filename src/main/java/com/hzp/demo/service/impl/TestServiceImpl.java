@@ -1,7 +1,7 @@
 package com.hzp.demo.service.impl;
 
 import com.hzp.demo.entity.User;
-import com.hzp.demo.reponsitory.UserReponsitory;
+import com.hzp.demo.repository.UserRepository;
 import com.hzp.demo.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 public class TestServiceImpl implements TestService {
 
     @Autowired
-    UserReponsitory userReponsitory;
+    UserRepository userRepository;
 
     @Override
     public String test() {
-        User hzp = userReponsitory.selectById("hzp");
+        User hzp = userRepository.selectById("hzp");
 
         return hzp.getName();
     }

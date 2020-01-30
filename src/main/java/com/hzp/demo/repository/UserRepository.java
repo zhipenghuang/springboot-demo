@@ -1,4 +1,4 @@
-package com.hzp.demo.reponsitory;
+package com.hzp.demo.repository;
 
 
 import com.hzp.demo.entity.User;
@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserReponsitory extends CrudRepository<User, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
 
     @Query(value = "update User set name  = ?2 where id = ?1", nativeQuery = true)
