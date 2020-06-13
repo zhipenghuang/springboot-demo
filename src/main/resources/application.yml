@@ -6,9 +6,9 @@ server:
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/test?useUnicodeicode=true&characterEncoding=UTF8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
-      username: root
-      password: hzp172594
+      url: jdbc:mysql://35.229.133.12:3306/sportsdata_manage?useUnicodeicode=true&characterEncoding=UTF8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+      username: aleng
+      password: ifjas89h89f1h9hf193gf7f1t38y8ybvj
       initial-size: 1
       max-active: 20
       min-idle: 1
